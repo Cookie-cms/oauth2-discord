@@ -1,8 +1,9 @@
 {
-  "name": "@your-username/discord-oauth-utils",
-  "version": "1.0.0",
+  "name": "@Cookie-cms/oauth2-discord",
+  "version": "1.1.0",
   "private": false,
   "main": "index.js",
+  "type": "module",
   "license": "MIT",
   "dependencies": {
     "axios": "^1.4.0"

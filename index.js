@@ -12,7 +12,8 @@ function genState() {
 
 export function getOAuthUrl(clientId, redirectUri, scope) {
     const state = genState();
-    return `${baseUrl}/oauth2/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&state=${state}`;
+    const scopeString = Array.isArray(scope) ? scope.join(' ') : scope;
+    return `${baseUrl}/oauth2/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&scope=${encodeURIComponent(scopeString)}&state=${state}`;
 }
 
 export async function initOAuth(redirectUri, clientId, clientSecret, code, botTokenParam = null) {
